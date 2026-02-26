@@ -4,12 +4,13 @@
 A simple, modern, and visually appealing Lotto number generator web application built with vanilla HTML, CSS, and JavaScript.
 
 ## Implementation Details
-- **HTML**: Modern structure with a clear CTA (Call to Action) and a theme toggle button.
+- **HTML**: Modern structure with a clear CTA (Call to Action), theme toggle, and a **Partnership Inquiry form**.
 - **CSS**: Responsive design using CSS Variables, Flexbox, and modern color palettes (OKLCH). Support for Light and Dark modes.
-- **JavaScript**: Clean logic to generate 6 unique random numbers and handle theme switching with persistence.
+- **JavaScript**: Logic for lotto generation, theme switching, and **form interaction feedback**.
+- **Integration**: **Formspree** for handling partnership inquiries without a backend.
 
 ## Current Plan
-1. **Update `index.html`**: Add a theme toggle button.
-2. **Update `style.css`**: Define Light/Dark theme variables and styles.
-3. **Update `main.js`**: Implement theme switching logic and state persistence using `localStorage`.
+1. **Update `index.html`**: Add a "제휴 문의" (Partnership Inquiry) section with a Formspree form.
+2. **Update `style.css`**: Style the form to match the current aesthetic (glassmorphism, light/dark support).
+3. **Update `main.js`**: Add simple feedback for form submission.
 4. **Push to GitHub**: For automatic deployment.

@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const generateBtn = document.getElementById('generate-btn');
   const numbersContainer = document.getElementById('lotto-numbers');
   const themeToggle = document.getElementById('theme-toggle');
+  const inquiryForm = document.getElementById('inquiry-form');
+  const formStatus = document.getElementById('form-status');
   
   // Theme Logic
   const currentTheme = localStorage.getItem('theme') || 'light';
@@ -44,6 +46,40 @@ document.addEventListener('DOMContentLoaded', () => {
       ball.textContent = num;
       ball.style.animationDelay = `${index * 0.1}s`;
       numbersContainer.appendChild(ball);
+    });
+  }
+
+  // Form Logic
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      
+      formStatus.textContent = '보내는 중...';
+      formStatus.style.color = 'var(--primary-color)';
+
+      try {
+        const response = await fetch(e.target.action, {
+          method: inquiryForm.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = '감사합니다! 문의가 성공적으로 전송되었습니다.';
+          formStatus.style.color = '#4CAF50';
+          inquiryForm.reset();
+        } else {
+          const result = await response.json();
+          formStatus.textContent = result.errors ? result.errors.map(error => error.message).join(", ") : '오류가 발생했습니다.';
+          formStatus.style.color = '#f44336';
+        }
+      } catch (error) {
+        formStatus.textContent = '서버 통신 중 오류가 발생했습니다.';
+        formStatus.style.color = '#f44336';
+      }
     });
   }
 });
