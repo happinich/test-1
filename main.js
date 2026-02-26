@@ -1,7 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const generateBtn = document.getElementById('generate-btn');
   const numbersContainer = document.getElementById('lotto-numbers');
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  // Theme Logic
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
 
+  themeToggle.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+  // Lotto Logic
   generateBtn.addEventListener('click', () => {
     const numbers = generateLottoNumbers();
     displayNumbers(numbers);
@@ -22,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const ball = document.createElement('div');
       ball.className = 'lotto-ball';
       
-      // Assign range classes for different colors
       if (num <= 10) ball.classList.add('range-10');
       else if (num <= 20) ball.classList.add('range-20');
       else if (num <= 30) ball.classList.add('range-30');
@@ -30,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       else ball.classList.add('range-max');
 
       ball.textContent = num;
-      // Stagger animation
       ball.style.animationDelay = `${index * 0.1}s`;
       numbersContainer.appendChild(ball);
     });
