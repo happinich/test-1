@@ -7,7 +7,7 @@ A simple, modern, and visually appealing Lotto number generator web application 
 - **HTML**: Modern structure with a clear CTA (Call to Action), theme toggle, and a **Partnership Inquiry form**.
 - **CSS**: Responsive design using CSS Variables, Flexbox, and modern color palettes (OKLCH). Support for Light and Dark modes.
 - **JavaScript**: Logic for lotto generation, theme switching, and **form interaction feedback**.
-- **Integration**: **Formspree** for handling partnership inquiries without a backend.
+- **Integration**: **Formspree** for handling partnership inquiries, **Disqus** for comments, and **Google AdSense** for monetization.
 
 ## Current Plan
 1. **Update `index.html`**: Add a "제휴 문의" (Partnership Inquiry) section with a Formspree form.
