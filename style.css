@@ -200,9 +200,16 @@ h1 { margin-bottom: 1.5rem; font-weight: 800; }
   color: white;
 }
 
-.form-status {
-  margin-top: 1rem;
-  font-size: 0.85rem;
+.comments-section {
+  text-align: left;
+}
+
+.comments-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
   text-align: center;
-  min-height: 1.2rem;
+}
+
+#disqus_thread {
+  width: 100%;
 }
