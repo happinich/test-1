@@ -1,16 +1,17 @@
-# Lotto Number Generator Blueprint
+# Lotto Hub High-Quality Optimization Blueprint (AdSense Ready)
 
 ## Overview
-A simple, modern, and visually appealing Lotto number generator web application built with vanilla HTML, CSS, and JavaScript.
+Transforming the simple lotto generator into a comprehensive "Lotto Information Hub" to meet Google AdSense's high-quality content standards.
 
-## Implementation Details
-- **HTML**: Modern structure with a clear CTA (Call to Action), theme toggle, and a **Partnership Inquiry form**.
-- **CSS**: Responsive design using CSS Variables, Flexbox, and modern color palettes (OKLCH). Support for Light and Dark modes.
-- **JavaScript**: Logic for lotto generation, theme switching, and **form interaction feedback**.
-- **Integration**: **Formspree** for handling partnership inquiries, **Disqus** for comments, and **Google AdSense** for monetization.
+## Core Optimization Pillars
+- **Substantial Content**: Adding 1,000+ words of original content regarding lotto statistics, probability analysis, and usage guides.
+- **Structured Navigation**: Implementing a sticky header with smooth-scroll navigation to improve site crawlability.
+- **Trust & Transparency**: Adding a dedicated Privacy Policy and "About Us" information.
+- **SEO & Meta**: Optimizing title tags, descriptions, and semantic HTML5 for better search engine indexing.
 
-## Current Plan
-1. **Update `index.html`**: Add a "제휴 문의" (Partnership Inquiry) section with a Formspree form.
-2. **Update `style.css`**: Style the form to match the current aesthetic (glassmorphism, light/dark support).
-3. **Update `main.js`**: Add simple feedback for form submission.
-4. **Push to GitHub**: For automatic deployment.
+## Implementation Steps
+1.  **Expand `index.html`**: Add Nav bar, Informational sections (Tips, FAQ, Stats), and a Footer.
+2.  **Update `style.css`**: Design a professional, long-form content layout with high readability.
+3.  **Create `privacy.html`**: Essential legal document for AdSense approval.
+4.  **Update `main.js`**: Add scroll-spy and smooth navigation logic.
+5.  **Verify `ads.txt`**: Ensure crawler access.

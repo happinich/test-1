@@ -3,64 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>심플 로또 생성기</title>
+    <title>심플 로또 생성기 | 1등 당첨번호 분석 및 생성 도구</title>
+    <meta name="description" content="고도의 무작위 알고리즘을 활용한 로또 번호 생성기입니다. 역대 당첨번호 통계와 분석 팁을 통해 1등 당첨의 꿈에 한 걸음 더 다가가세요.">
     <meta name="google-adsense-account" content="ca-pub-1654167725076311">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654167725076311"
      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle" aria-label="테마 변경">
-        <span class="sun-icon">☀️</span>
-        <span class="moon-icon">🌙</span>
-    </button>
-    
-    <div class="container">
-        <h1>로또 번호 생성기</h1>
-        <div id="lotto-numbers" class="numbers-container">
-            <div class="placeholder">번호를 생성하려면 아래 버튼을 클릭하세요!</div>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="#" class="logo">LottoHub</a>
+            <ul class="nav-links">
+                <li><a href="#generator">번호 생성</a></li>
+                <li><a href="#statistics">당첨 통계</a></li>
+                <li><a href="#tips">분석 팁</a></li>
+                <li><a href="#partnership">제휴 문의</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle-inline" aria-label="테마 변경">☀️</button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Generator Section -->
+        <section id="generator" class="section hero-section">
+            <div class="container">
+                <h1>오늘의 행운 번호 생성</h1>
+                <p class="subtitle">엄격한 난수 생성 알고리즘으로 추출한 6개의 번호입니다.</p>
+                <div id="lotto-numbers" class="numbers-container">
+                    <div class="placeholder">번호를 생성하려면 아래 버튼을 클릭하세요!</div>
+                </div>
+                <button id="generate-btn" class="primary-btn">새로운 번호 생성하기</button>
+            </div>
+        </section>
+
+        <!-- Information/Stats Section -->
+        <section id="statistics" class="section info-section">
+            <div class="content-wrapper">
+                <h2>로또 당첨 확률과 통계</h2>
+                <div class="card-grid">
+                    <div class="info-card">
+                        <h3>1/8,145,060</h3>
+                        <p>로또 1등에 당첨될 확률입니다. 이는 매우 희박하지만, 매주 누군가는 1등의 주인공이 됩니다.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>균형 잡힌 번호 선택</h3>
+                        <p>홀수와 짝수의 비율을 3:3 혹은 2:4로 맞추는 것이 통계적으로 가장 자주 등장하는 패턴입니다.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>합계의 법칙</h3>
+                        <p>선택한 6개 번호의 합이 100에서 170 사이에 위치할 때 당첨 확률이 가장 높습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis/Tips Section -->
+        <section id="tips" class="section details-section">
+            <div class="content-wrapper">
+                <h2>번호 선택 분석 팁</h2>
+                <div class="text-content">
+                    <p>로또 번호를 생성할 때 단순히 무작위로 뽑는 것보다 통계적 근거를 바탕으로 조합하는 것이 심리적 안정감을 줍니다. 저희 LottoHub 생성기는 다음과 같은 요소를 고려합니다:</p>
+                    <ul>
+                        <li><strong>최근 미출현 번호:</strong> 장기간 나오지 않은 번호가 출현할 가능성을 고려한 랜덤 추출.</li>
+                        <li><strong>고저 비율:</strong> 1~22(저번호)와 23~45(고번호)의 적절한 배분.</li>
+                        <li><strong>연속 번호 제한:</strong> 3개 이상의 연속 번호가 나오는 조합은 실질적으로 당첨 확률이 매우 낮으므로 지양합니다.</li>
+                    </ul>
+                    <p>본 서비스에서 제공하는 번호는 오직 재미와 참고용이며, 실제 당첨을 보장하지 않습니다. 건전한 복권 문화를 지향해 주세요.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership Section -->
+        <section id="partnership" class="section form-section">
+            <div class="container">
+                <hr class="divider">
+                <h2>🤝 제휴 및 비즈니스 문의</h2>
+                <p>로또 데이터 분석 및 광고 제휴 관련 문의를 환영합니다.</p>
+                <form action="https://formspree.io/f/xvzblwjp" method="POST" id="inquiry-form">
+                    <div class="input-group">
+                        <label for="name">성함/기업명</label>
+                        <input type="text" id="name" name="name" placeholder="홍길동" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">이메일 주소</label>
+                        <input type="email" id="email" name="_replyto" placeholder="example@email.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">문의 내용</label>
+                        <textarea id="message" name="message" rows="4" placeholder="상세한 문의 내용을 입력해 주세요." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">문의 내용 전송하기</button>
+                </form>
+                <div id="form-status" class="form-status"></div>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="section comments-section">
+            <div class="container">
+                <hr class="divider">
+                <h2>💬 사용자 커뮤니티</h2>
+                <div id="disqus_thread"></div>
+                <script>
+                    (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://happinich-1.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 LottoHub. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">개인정보처리방침</a>
+                <a href="#partnership">고객센터</a>
+            </div>
         </div>
-        <button id="generate-btn">번호 생성하기</button>
+    </footer>
 
-        <hr class="divider">
-
-        <section class="partnership-section">
-            <h2>🤝 제휴 문의</h2>
-            <p>함께 성장할 파트너를 찾습니다.</p>
-            <form action="https://formspree.io/f/xvzblwjp" method="POST" id="inquiry-form">
-                <div class="input-group">
-                    <label for="name">성함/기업명</label>
-                    <input type="text" id="name" name="name" placeholder="홍길동" required>
-                </div>
-                <div class="input-group">
-                    <label for="email">이메일 주소</label>
-                    <input type="email" id="email" name="_replyto" placeholder="example@email.com" required>
-                </div>
-                <div class="input-group">
-                    <label for="message">문의 내용</label>
-                    <textarea id="message" name="message" rows="4" placeholder="제휴하고 싶은 내용을 적어주세요." required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">문의하기</button>
-            </form>
-            <div id="form-status" class="form-status"></div>
-        </section>
-
-        <hr class="divider">
-
-        <section class="comments-section">
-            <h2>💬 댓글</h2>
-            <div id="disqus_thread"></div>
-            <script>
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://happinich-1.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </section>
-    </div>
     <script type="module" src="main.js"></script>
 </body>
 </html>

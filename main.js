@@ -8,13 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Theme Logic
   const currentTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', currentTheme);
+  updateThemeIcon(currentTheme);
 
   themeToggle.addEventListener('click', () => {
     const theme = document.documentElement.getAttribute('data-theme');
     const newTheme = theme === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
   });
+
+  function updateThemeIcon(theme) {
+    themeToggle.textContent = theme === 'light' ? '☀️' : '🌙';
+  }
 
   // Lotto Logic
   generateBtn.addEventListener('click', () => {
@@ -37,11 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const ball = document.createElement('div');
       ball.className = 'lotto-ball';
       
-      if (num <= 10) ball.classList.add('range-10');
-      else if (num <= 20) ball.classList.add('range-20');
-      else if (num <= 30) ball.classList.add('range-30');
-      else if (num <= 40) ball.classList.add('range-40');
-      else ball.classList.add('range-max');
+      // Traditional Lotto Color Ranges (Standard in Korea)
+      if (num <= 10) ball.style.background = '#fbc400'; // Yellow
+      else if (num <= 20) ball.style.background = '#69c8f2'; // Blue
+      else if (num <= 30) ball.style.background = '#ff7272'; // Red
+      else if (num <= 40) ball.style.background = '#aaa'; // Grey
+      else ball.style.background = '#b0d840'; // Green
 
       ball.textContent = num;
       ball.style.animationDelay = `${index * 0.1}s`;
@@ -55,16 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const data = new FormData(e.target);
       
-      formStatus.textContent = '보내는 중...';
+      formStatus.textContent = '문의 내용을 전송하고 있습니다...';
       formStatus.style.color = 'var(--primary-color)';
 
       try {
         const response = await fetch(e.target.action, {
           method: inquiryForm.method,
           body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
+          headers: { 'Accept': 'application/json' }
         });
 
         if (response.ok) {
@@ -72,8 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formStatus.style.color = '#4CAF50';
           inquiryForm.reset();
         } else {
-          const result = await response.json();
-          formStatus.textContent = result.errors ? result.errors.map(error => error.message).join(", ") : '오류가 발생했습니다.';
+          formStatus.textContent = '오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
           formStatus.style.color = '#f44336';
         }
       } catch (error) {
